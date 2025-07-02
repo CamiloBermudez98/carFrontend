@@ -1,0 +1,18 @@
+
+<div id="login-toolbar">
+  <div id="logo"><a [routerLink]="['home']" routerLinkActive="active">Cat Serch</a></div>
+  <div id="nav-links">
+    <ng-container *ngIf="!appComponent.isLoggedIn; else loggedInBlock">
+      <a [routerLink]="['Login']" routerLinkActive="active">Iniciar Sesión</a>
+     
+    </ng-container>
+    
+    <ng-template #loggedInBlock>
+      <div class="user-info">
+        <img [src]="appComponent.user.photoUrl" alt="Foto de usuario" class="avatar">
+        <span>{{ appComponent.user.name }}</span>
+      </div>
+    </ng-template>
+  </div>
+</div>
+

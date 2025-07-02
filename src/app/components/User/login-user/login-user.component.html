@@ -1,0 +1,28 @@
+<div class="login-container">
+  <div class="login-card">
+    <div class="icon">
+      <img src="assets/cat-icon.png" alt="Cat Icon" />
+    </div>
+    <h2>Iniciar Sesión</h2>
+
+    <form (ngSubmit)="onSubmit()" [formGroup]="loginForm">
+      <mat-form-field appearance="outline">
+        <mat-label>Usuario</mat-label>
+        <input matInput formControlName="username" required />
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Contraseña</mat-label>
+        <input matInput type="password" formControlName="password" required />
+      </mat-form-field>
+
+      <button mat-raised-button color="primary" type="submit" [disabled]="loginForm.invalid || isLoading">
+        {{ isLoading ? 'Cargando...' : 'Ingresar' }}
+      </button>
+    </form>
+
+    <p class="register-link">
+      ¿No tienes cuenta? <a [routerLink]="['Register']" routerLinkActive="active">Regístrate aquí</a>
+    </p>
+  </div>
+</div>

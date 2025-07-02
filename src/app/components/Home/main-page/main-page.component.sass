@@ -1,0 +1,108 @@
+.container 
+  font-family: sans-serif
+  padding: 2rem
+  display: flex
+  flex-direction: column
+  align-items: center
+
+  h2, h3 
+    margin-bottom: 1rem
+  
+
+  label 
+    font-weight: bold
+  
+
+  select 
+    margin: 0 0 1.5rem 0.5rem
+    padding: 0.25rem 0.5rem
+  
+
+  .carousel 
+    display: flex
+    flex-direction: column
+    align-items: center
+    justify-content: center
+    padding: 1.5rem
+    gap: 1rem
+    background-color: #fafafa
+    border-radius: 12px
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1)
+    margin:1rem
+
+    .cargado-content 
+      display: flex
+      flex-direction: column
+      align-items: center
+      gap: 1rem
+
+      img 
+        width: 200px
+        height: auto
+        border-radius: 8px
+        align-items: center
+        justify-content: center
+      
+
+      button 
+        margin: 0 0.5rem
+        padding: 0.5rem 1rem
+        font-size: 1.2rem
+        border: none
+        background-color: #1976d2
+        color: white
+        border-radius: 5px
+        cursor: pointer
+
+        &:disabled 
+          background-color: #ccc
+          cursor: not-allowed
+      
+
+      .info 
+        text-align: center
+        max-width: 400px
+    
+  
+
+  .table-title 
+    margin-top: 2rem
+  
+
+  .raza-table 
+    width: 100%
+    border-collapse: collapse
+
+    th, td 
+      border: 1px solid #ccc
+      padding: 0.5rem
+    
+
+    th 
+      background-color: #f0f0f0
+  
+.search-container 
+  margin-bottom: 1rem
+  display: flex
+  gap: 0.5rem
+  align-items: center
+
+  input 
+    padding: 0.25rem 0.5rem
+    width: 200px
+  
+
+  button 
+    padding: 0.25rem 1rem
+    cursor: pointer
+
+
+.loading-spinner 
+  background-color: #f3f3f3
+  padding: 1rem
+  border: 1px solid #ddd
+  margin-bottom: 1rem
+  font-weight: bold
+  text-align: center
+  color: #555
+  

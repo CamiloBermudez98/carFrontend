@@ -1,0 +1,53 @@
+ <div *ngIf="isLoadingall" class="loading-spinner">
+  <p>Cargando gatos...</p>
+</div>
+
+<div class="container" *ngIf="!isLoadingall">
+
+ 
+  <label for="raza-select">Raza:</label>
+  <select id="raza-select" (change)="onrazaChange($event)">
+     <option value="" disabled selected>Selecciona una raza</option>
+    <option *ngFor="let Razas of Razas" [value]="Razas.id">{{ Razas.name }}</option>
+  </select>
+   
+
+  <div class="carousel" *ngIf="loadingSelect">
+    <div *ngIf="!isLoadingaRaza" class="loading-spinner">
+    <p>Cargando gatos...</p>
+    </div>  
+
+    <div *ngIf="isLoadingaRaza" class="cargado-content" >
+    <div><img [src]="images[currentImageIndex]?.url" alt="Imagen gato"> </div>
+   <div> <button (click)="previousImage()" [disabled]="currentImageIndex === 0">‹</button>
+    <button (click)="nextImage()" [disabled]="currentImageIndex === images.length - 1">›</button></div>
+
+    <div class="info">
+      <h3>{{ selectedrazaInfo.name }}</h3>
+      <p><strong>Descripción:</strong> {{ selectedrazaInfo.description }}</p>
+    </div>
+
+    </div>
+  </div>
+  <div class="search-container">
+    <input id="search-raza" type="text" [(ngModel)]="searchText" placeholder="Buscar...">
+    <button (click)="buscarRaza()">Buscar</button>
+  </div>
+
+  <table class="raza-table">
+    <thead>
+      <tr><th>Raza</th><th>Origen</th><th>Temperamento</th><th>wikipedia_url</th></tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let raza of RazasPorFiltar">
+        <td>{{ raza.name }}</td>
+        <td>{{ raza.origin }}</td>
+        <td>{{ raza.temperament }}</td>
+        <td><a [href]="raza.wikipedia_url" target="_blank" rel="noopener noreferrer">
+         Ver en Wikipedia
+        </a></td>
+      
+      </tr>
+    </tbody>
+  </table>
+</div>
